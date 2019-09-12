@@ -312,8 +312,8 @@ Readability.prototype = {
    * @return void
    */
   _fixRelativeUris: function(articleContent) {
-    var baseURI = this._doc.baseURI;
-    var documentURI = this._doc.documentURI;
+    var baseURI = this._doc.originURI;
+    var documentURI = this._doc.originURI;
     function toAbsoluteURI(uri) {
       // Leave hash links alone if the base URI matches the document URI:
       if (baseURI == documentURI && uri.charAt(0) == "#") {
@@ -1855,3 +1855,4 @@ Readability.prototype = {
 if (typeof module === "object") {
   module.exports = Readability;
 }
+export { Readability };
