@@ -346,8 +346,16 @@ Readability.prototype = {
     var imgs = this._getAllNodesWithTag(articleContent, ["img"]);
     this._forEachNode(imgs, function(img) {
       var src = img.getAttribute("src");
+      var dataSrc = img.getAttribute("data-src");
+      var lazySrc = img.getAttribute("data-lazy-src");
       if (src) {
         img.setAttribute("src", toAbsoluteURI(src));
+      }
+      if (dataSrc) {
+        img.setAttribute("src", toAbsoluteURI(dataSrc));
+      }
+      if (lazySrc) {
+        img.setAttribute("src", toAbsoluteURI(lazySrc));
       }
     });
   },
