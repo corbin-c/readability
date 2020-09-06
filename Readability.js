@@ -343,7 +343,7 @@ Readability.prototype = {
       }
     });
 
-    var imgs = this._getAllNodesWithTag(articleContent, ["img"]);
+    var imgs = this._getAllNodesWithTag(articleContent, ["img","iframe"]);
     this._forEachNode(imgs, function(img) {
       var src = img.getAttribute("src");
       var dataSrc = img.getAttribute("data-src");
